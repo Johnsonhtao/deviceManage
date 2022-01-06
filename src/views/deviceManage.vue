@@ -57,7 +57,7 @@ export default {
     },
     //获取id来进行更新
     edit(row) {
-      console.log(row)
+      // console.log(row)
       this.$router.push({
         path:'/deviceUpdate',
         query:{
