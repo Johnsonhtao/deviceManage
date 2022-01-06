@@ -41,21 +41,7 @@ import axios from "axios";
 
 export default {
   methods: {
-    data() {
-      return {
-        total:null,
-        tableData: null,
-      }
-    },
-    //初始化函数
-    created(){
-      const _this = this;
-      axios.get('http://localhost:8181/device/findAll/1/5').then(function (resp){
-        _this.tableData = resp.data.content;
-        _this.total = resp.data.totalElements;
-        console.log(resp);
-      })
-    },
+
     deleteByid(row){
       // alert(row.id)
       console.log(row.id)
@@ -90,6 +76,23 @@ export default {
         // console.log(resp);
       })
     },
+
+  },
+  //data 和 create是同等级别的
+  data() {
+    return {
+      total:null,
+      tableData: null,
+    }
+  },
+  //初始化函数
+  created(){
+    const _this = this;
+    axios.get('http://localhost:8181/device/findAll/1/5').then(function (resp){
+      _this.tableData = resp.data.content;
+      _this.total = resp.data.totalElements;
+      console.log(resp);
+    })
   },
 }
 </script>
