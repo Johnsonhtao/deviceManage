@@ -54,6 +54,7 @@ export default {
       })
       //当删除之后，重新刷新界面
       window.location.reload()
+
     },
     //获取id来进行更新
     edit(row) {
